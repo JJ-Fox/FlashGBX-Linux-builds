@@ -316,7 +316,7 @@ In the GitHub [Releases](https://github.com/Lesserkuma/FlashGBX/releases) sectio
 
 > [!NOTE]
 > You may need to give yourself permissions to access the cartridge reader/writer hardware using one of the following methods.
-> * Permanent system-wide permissions via udev rules (e.g. /etc/udev/rules.d/50-flashgbx.rules):<br>`SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", MODE="0666"`<br>`SUBSYSTEM=="tty", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE="0666"`<br>Then run `sudo udevadm control --reload-rules && sudo udevadm trigger`.
+> * Permanent system-wide permissions via udev rules (e.g. /etc/udev/rules.d/50-flashgbx.rules):<br>`SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", MODE="0666"`<br>`SUBSYSTEM=="tty", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE="0666"`<br>SUBSYSTEM=="tty", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="B010", MODE="0666"<br>Then run `sudo udevadm control --reload-rules && sudo udevadm trigger`.
 > * Permanent user account permissions via user group:<br>`sudo usermod -a -G dialout $USER` or `sudo usermod -a -G uucp $USER` (then reboot)
 > * Temporary permissions:<br>`sudo chmod 0666 /dev/ttyUSB0` (replace with actual device path)
 
